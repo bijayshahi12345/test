@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Personal Page</title>
     <style>
         body {
-            background-color: #4eb21c;
+            background-color: hsl(192, 93%, 48%);
             font-family: Arial, sans-serif;
             text-align: center;
-            background-color: hsl(192, 93%, 48%);
+            transition: background-color 0.5s ease; /* Smooth transition for background color */
         }
         h1 {
             color: rgb(124, 85, 222);
@@ -19,19 +21,50 @@
         }
         button {
             padding: 10px;
-            margin-top: 10px;
+            margin-top: 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: rgb(137, 248, 47); /* Fixed background color */
+            border: none;
+            border-radius: 5px;
+            color: black; /* Fixed text color */
+        }
+        button:hover {
+            background-color: rgb(21, 126, 246); /* Fixed hover background color */
+        }
+        .bio {
+            margin-top: 30px;
+            font-size: 1.2rem;
+            color: black;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
     </style>
 </head>
 <body>
-    <h1>Hi, I'm [Bijay shahi]!</h1>
-    <img src="profile.jpg" alt="Profile Picture">
-    <p>Welcome to my first webpage.</p>
+    <h1>Hi, I'm Bijay Shahi!</h1>
+    <img src="bijay.jpg" alt="Profile Picture of Bijay Shahi">
+
+    <div class="bio">
+        <p>I'm a passionate web developer with a love for creating innovative web applications. Passionate about staying fit, working hard, and constantly striving for my goals. I love outdoor games, and I'm determined to create new business opportunities that make finding jobs easier and more accessible for everyone. I enjoy solving problems, learning new technologies, and building projects that make a difference. Thanks for visiting my page!</p>
+    </div>
+
     <button onclick="changeText()">Click Me</button>
+    <button onclick="changeBackgroundColor()">Change Background Color</button>
 
     <script>
         function changeText() {
-            document.querySelector("p").innerText = "Thanks for visiting my page!";
+            document.querySelector(".bio p").innerText = "Thanks for visiting my page!";
+        }
+
+        function changeBackgroundColor() {
+            const body = document.body;
+            if (body.style.backgroundColor === 'rgb(54, 140, 235)') {
+                body.style.backgroundColor = 'hsl(192, 93%, 48%)'; // Original color
+            } else {
+                body.style.backgroundColor = 'rgb(54, 140, 235)'; // New color (light blue)
+            }
         }
     </script>
 </body>
